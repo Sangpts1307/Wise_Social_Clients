@@ -1,0 +1,41 @@
+{
+    "status" : 200,
+    "data" : [
+        {
+            "id" : 1,
+            "comment" : "中際提けトイつ売 <br/> ず務法債中際提けトイつ売ぞろ惜禁け割門9要ワ ",
+            "avatar" : "avatar.png",
+            "name" : "中際提",
+            "created_at" : "2022-07-09 07:00:41",
+            "parent_id" : null,
+            "child" : null
+        },
+        {
+            "id" : 2,
+            "comment" : "中際提けトイつ売 <br/> ず務法債中際提けトイつ売ぞろ惜禁け割門9要ワ ",
+            "avatar" : "avatar.png",
+            "name" : "中際提",
+            "created_at" : "2022-07-09 07:00:41",
+            "parent_id" : null,
+            "child" : [
+                {
+                    "id" : 3,
+                    "comment" : "中際提けトイつ売 <br/> ず務法債中際提けトイつ売ぞろ惜禁け割門9要ワ ",
+                    "avatar" : "avatar.png",
+                    "name" : "中際提",
+                    "created_at" : "2022-07-09 07:00:41",
+                    "parent_id" : 2  
+                },
+                {
+                    "id" : 4,
+                    "comment" : "中際提けトイつ売 <br/> ず務法債中際提けトイつ売ぞろ惜禁け割門9要ワ ",
+                    "avatar" : "avatar.png",
+                    "name" : "中際提",
+                    "created_at" : "2022-07-09 07:00:41",
+                    "parent_id" : 2  
+                }
+            ]
+        }
+    ],
+    "message": "success"
+}

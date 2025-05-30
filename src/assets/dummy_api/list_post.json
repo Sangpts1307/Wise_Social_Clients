@@ -1,0 +1,56 @@
+{
+    "status" : 200,
+    "data" : {
+        "posts" : [
+            {
+                "id" : 1,
+                "author_id" : 1,
+                "author_name" : "LongNguyen",
+                "author_avatar" : "Viet Nam",
+                "experiences" : "Ha Noi",
+                "skill" : [
+                    {
+                        "id" : 1,
+                        "skill" : "C, C++ Developer"
+                    },
+                    {
+                        "id" : 2,
+                        "skill" : "PHP Developer"
+                    }
+                ],
+                "content" : "lorem 1000",
+                "sort_content" : "lorem...",
+                "timeline_order" : "2022-07-09 07:00:41",
+                "total_like" : 99,
+                "total_comment" : 99,
+                "view_count" : 100
+            },
+            {
+                "id" : 2,
+                "author_id" : 1,
+                "author_name" : "LongNguyen",
+                "author_avatar" : "Viet Nam",
+                "experiences" : "Ha Noi",
+                "skill" : [
+                    {
+                        "id" : 1,
+                        "skill" : "C, C++ Developer"
+                    },
+                    {
+                        "id" : 2,
+                        "skill" : "PHP Developer"
+                    }
+                ],
+                "content" : "lorem 1000",
+                "sort_content" : "lorem...",
+                "timeline_order" : "2022-07-09 07:00:41",
+                "total_like" : 99,
+                "total_comment" : 99,
+                "view_count" : 100
+            }
+        ],
+        "offset" : 0,
+        "limit" : 6
+    },
+    "message": "success"
+}

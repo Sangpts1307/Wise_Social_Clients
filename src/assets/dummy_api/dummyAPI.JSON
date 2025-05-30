@@ -1,0 +1,17 @@
+{
+    "status" : 200,
+    "data" : {
+        "token" : "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9hcGkudGVzdFwvYXBpXC9sb2dpbi",
+        "user" : {
+            "id" : 1,
+            "name" : "NguyenLong",
+            "email" : "nguyenlongit95@gmail.com",
+            "location" : "Viet Nam",
+            "city" : "Ha Noi",
+            "avatar" : "avatar.jpg",
+            "banner" : "banner.jpg",
+            "overview" : "lorem",
+            "online_status" : 1
+        }
+    }
+}
