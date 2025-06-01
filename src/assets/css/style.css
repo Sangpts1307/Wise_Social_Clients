@@ -8015,6 +8015,7 @@ background: #555;
 .chat-box {
     position: fixed;
     bottom: 0;
+    margin-bottom: 25px;
     right: 15.5%;
     background: white;
     height: 40vh;
