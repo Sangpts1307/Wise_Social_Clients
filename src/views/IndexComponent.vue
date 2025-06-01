@@ -72,6 +72,6 @@ import ChatComponent from '@/components/ChatComponent.vue';
       </div>
     </main>
     <!--chatbox-list end-->
-    <!-- <ChatComponent /> -->
+    <ChatComponent/>
   </div>
 </template>

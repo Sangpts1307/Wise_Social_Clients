@@ -11,129 +11,17 @@
                 <!--msg-title end-->
                 <div class="messages-list">
                     <ul>
-                        <li>
+                        <li v-for="friend in friends">
                             <div class="usr-msg-details">
                                 <div class="usr-ms-img">
                                     <img src="../assets/images/resources/m-img1.png" alt="">
                                 </div>
                                 <div class="usr-mg-info">
-                                    <h3>Trần Dần</h3>
-                                    <p>主ケキ膀認ねず務法債中 <img src="../assets/images/smley.png" alt=""></p>
+                                    <h3>{{ friend.name }}</h3>
+                                    <p>{{ friend.last_message }}</p>
                                 </div>
                                 <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
-                            </div>
-                            <!--usr-msg-details end-->
-                        </li>
-                        <li>
-                            <div class="usr-msg-details">
-                                <div class="usr-ms-img">
-                                    <img src="../assets/images/resources/m-img2.png" alt="">
-                                </div>
-                                <div class="usr-mg-info">
-                                    <h3>Minh Chính Phạm</h3>
-                                    <p>主ケキ膀認ねず務法債中</p>
-                                </div>
-                                <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
-                            </div>
-                            <!--usr-msg-details end-->
-                        </li>
-                        <li>
-                            <div class="usr-msg-details">
-                                <div class="usr-ms-img">
-                                    <img src="../assets/images/resources/m-img3.png" alt="">
-                                </div>
-                                <div class="usr-mg-info">
-                                    <h3>Phú Trọng Nguyễn</h3>
-                                    <p>主ケキ膀認ねず務法債中!</p>
-                                </div>
-                                <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
-                            </div>
-                            <!--usr-msg-details end-->
-                        </li>
-                        <li>
-                            <div class="usr-msg-details">
-                                <div class="usr-ms-img">
-                                    <img src="../assets/images/resources/m-img4.png" alt="">
-                                </div>
-                                <div class="usr-mg-info">
-                                    <h3>Kim Ngân Nguyễn</h3>
-                                    <p>主ケキ膀認ねず務法債中</p>
-                                </div>
-                                <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
-                            </div>
-                            <!--usr-msg-details end-->
-                        </li>
-                        <li>
-                            <div class="usr-msg-details">
-                                <div class="usr-ms-img">
-                                    <img src="../assets/images/resources/m-img5.png" alt="">
-                                </div>
-                                <div class="usr-mg-info">
-                                    <h3>Cơ Minh Hoàng</h3>
-                                    <p>主ケキ膀認ねず務法債中</p>
-                                </div>
-                                <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
-                            </div>
-                            <!--usr-msg-details end-->
-                        </li>
-                        <li>
-                            <div class="usr-msg-details">
-                                <div class="usr-ms-img">
-                                    <img src="../assets/images/resources/m-img6.png" alt="">
-                                </div>
-                                <div class="usr-mg-info">
-                                    <h3>Nhật Vượng Phạm</h3>
-                                    <p>主ケキ膀認ねず務法債中務法債中</p>
-                                </div>
-                                <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
-                            </div>
-                            <!--usr-msg-details end-->
-                        </li>
-                        <li>
-                            <div class="usr-msg-details">
-                                <div class="usr-ms-img">
-                                    <img src="../assets/images/resources/m-img7.png" alt="">
-                                </div>
-                                <div class="usr-mg-info">
-                                    <h3>Quốc Huy Trương</h3>
-                                    <p>...</p>
-                                </div>
-                                <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
-                            </div>
-                            <!--usr-msg-details end-->
-                        </li>
-                        <li>
-                            <div class="usr-msg-details">
-                                <div class="usr-ms-img">
-                                    <img src="../assets/images/resources/m-img7.png" alt="">
-                                </div>
-                                <div class="usr-mg-info">
-                                    <h3>Kim Jong Un</h3>
-                                    <p>主ケキ膀認ねず務法債中務法債中...</p>
-                                </div>
-                                <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
-                            </div>
-                            <!--usr-msg-details end-->
-                        </li>
-                        <li>
-                            <div class="usr-msg-details">
-                                <div class="usr-ms-img">
-                                    <img src="../assets/images/resources/m-img1.png" alt="">
-                                </div>
-                                <div class="usr-mg-info">
-                                    <h3>V.D Putin</h3>
-                                    <p>主ケキ膀認ねず務法債中務法債中 <img src="../assets/images/smley.png" alt=""></p>
-                                </div>
-                                <!--usr-mg-info end-->
-                                <span class="posted_time">05月06日</span>
+                                <span class="posted_time">{{ friend.last_sent }}</span>
                             </div>
                             <!--usr-msg-details end-->
                         </li>
@@ -201,3 +89,98 @@
             <img src="https://media2.giphy.com/media/GXwvDVrQTCKAUBu71D/giphy.gif?cid=790b761152aa12f58ec81be0f7a66f9edeadf7ede51e7dd1&rid=giphy.gif&ct=g" alt="">
         </div> -->
 </template>
+
+<script>
+    //import Vue from 'vue'
+    import axios from 'axios'
+    // import component1 from 'component1'
+    // import component2 from 'component2'
+
+    export default {
+        /***********************************************************************************************************
+         ******************************* Pass data to child component **********************************************
+         **********************************************************************************************************/
+        // props: [variable1, variable2],
+        // components: {component1, component2},
+        data() {
+            /***********************************************************************************************************
+             ******************************* Initialize global variables ***********************************************
+             **********************************************************************************************************/
+            return {
+                msg: 'Hello world!',
+                friends: [],
+                token: sessionStorage.getItem("token"),
+            }
+        },
+        created() {
+            /***********************************************************************************************************
+             *********************** Initialize data when this component is used. **************************************
+             **********************************************************************************************************/
+            this.getFriends();
+        },
+        mounted() {
+            /***********************************************************************************************************
+             ******************** Once created, the interface is displayed and calls mounted. **************************
+             **********************************************************************************************************/
+        },
+        watch: {
+            /***********************************************************************************************************
+             ********************************* Methods change value for a variable *************************************
+             **********************************************************************************************************/
+            msg() {
+                console.log("When the value of the msg variable changes, this method will be executed.");
+            }
+        },
+        computed: {
+            appendMsg() {
+                return msg + "Process the value and assign the value to the corresponding variable the var has changed.";
+            }
+        },
+        methods: {
+            /***********************************************************************************************************
+             ******************************* Default functions that handle local data **********************************
+             **********************************************************************************************************/
+
+            /**
+             * Example default function not using param
+             */
+            defaultFunction() {
+                this.msg = "Replace message here!";
+            },
+
+            /**
+             * Example default function using param 
+             *
+             * @param int pageNum number of page
+             * @return boolean
+             */
+            defaultFunctionUsingParam(pageNum) {
+                console.log(pageNum);
+                return false;
+            },
+            /**
+             * Call API sample
+             */
+            async getFriends() {
+                try {
+                    const callAPI = await axios.get(
+                        "http://localhost/learning-php-laravel-wisesocial-api/public/api/list-friend",
+                        {
+                            headers: {
+                            "Content-Type": "application/json",
+                            Authorization: "Bearer " + this.token,
+                            },
+                        }
+                    );
+                    if (callAPI.data.code == 200) {
+                        this.friends = callAPI.data.data;
+                    } else {
+                        alert("Call api failed, please check again!");
+                    }
+                } catch (err) {
+                    console.log(err);
+                }
+            },
+        },
+    }
+</script>
