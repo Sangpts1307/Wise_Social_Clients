@@ -83,6 +83,36 @@
          **********************************************************************************************************/
         // props: [variable1, variable2],
         // components: {component1, component2},
+
+        /**
+        * Define global service socket
+        *
+        * Listing event from socket.io server
+        * "ServerSendCommentToClient" is the name of the channel that sends notifications to all clients installed in the server socket
+        */
+        sockets: {
+            // Send data to server
+            ClientSendMessageToServer: function (responseMessage) {
+                messageContent = this.messageContent;
+            },
+            // Listen event from server and render data
+            ServerSendMessageToClient: function (responseMessage) {
+                // Push to the comment list
+                if (responseMessage.type === 'message') {
+                    // Kiem tra xem tin nhan nay la cua ban hay minh
+                    if (responseMessage.user_id == this.selectedFriend.id) {
+                        responseMessage.my_message = "friend";
+                    }
+                    this.listMessage.push(responseMessage);
+                    // Update lai toan bo component
+                    this.$forceUpdate();
+                } else if (responseMessage.type === 'message') {
+                    // Xu ly cho message
+                } else {
+                    console.log("Socket error!");
+                }
+            },
+        },
         data() {
             /***********************************************************************************************************
              ******************************* Initialize global variables ***********************************************
@@ -182,6 +212,26 @@
                     if (callAPI.data.code == 200) {
                         this.listMessage = callAPI.data.data.messages;
                         this.roomId = callAPI.data.data.room_id;
+                        let dataMsgSendToSocket = {
+                            "id": 0,
+                            "name": "",
+                            "avatar": "user-pro-img.png",
+                            "message": "",
+                            "user_id": "",
+                            "friend_id": "",
+                            "is_view": 0,
+                            "created_at": "",
+                            "my_message": "me",
+                            "_created_at": "",
+                            "room_id": this.roomId,
+                            "type": "message",
+                            "action": "join"
+                        };
+                        // Join room
+                        this.$socket.emit(
+                            'ClientSendMessageToServer',
+                            dataMsgSendToSocket,
+                        );
                     } else {
                         alert("Call api failed, please check again!");
                     }
@@ -206,9 +256,12 @@
                         }
                     });
                     if (callAPI.data.code == 200) {
-                        // TODO using socket here!
-                        this.listMessage.push(callAPI.data.data);
                         this.messageContent = "";
+                        // Join room
+                        this.$socket.emit(
+                            'ClientSendMessageToServer',
+                            callAPI.data.data
+                        );
                     } else {
                         alert("Call api failed, please check again!");
                     }
@@ -224,6 +277,7 @@
             hideBoxMsg() {
                 this.showChatBox = false;
                 this.selectedFriend = null;
+                // Leave room
             }
         },
     }
